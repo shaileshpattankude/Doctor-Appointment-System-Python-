@@ -2,8 +2,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    DATABASE_URL: str
-    JWT_SECRET_KEY: str
+    DATABASE_URL: str = ""
+    SECRET_KEY: str = ""
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
 
     class Config:
         env_file = ".env"
@@ -11,3 +12,6 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+if not settings.DATABASE_URL or not settings.SECRET_KEY:
+    raise RuntimeError("Missing required environment variables")

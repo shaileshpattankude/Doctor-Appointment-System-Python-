@@ -1,0 +1,2 @@
+PS D:\doctor-appointment-system-python> python -m venv venv
+PS D:\doctor-appointment-system-python> venv\Scripts\activate

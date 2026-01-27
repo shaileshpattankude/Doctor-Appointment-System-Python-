@@ -8,3 +8,5 @@ psycopg2-binary
 # Configuration & validation
 pydantic>=2.0
 pydantic-settings
+
+alembic
